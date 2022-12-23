@@ -6,10 +6,7 @@ const Card = ({ value, isSelected, handleSelect }) => {
       className={`card${isSelected ? ' selected' : ''}`}
       onClick={() => handleSelect(value)}
     >
-      <img
-        src={`/images/${isSelected ? 'BLUE_BACK' : value}.svg`}
-        alt={value}
-      />
+      <img src={`/images/${value}.svg`} alt={value} />
     </div>
   );
 };

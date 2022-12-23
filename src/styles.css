@@ -1,6 +1,7 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  width: 100vw;
 }
 
 .card-table {
@@ -16,13 +17,14 @@
   gap: 20px;
   justify-content: space-evenly;
   align-items: center;
+  font-weight: bold;
+  font-size: 2rem;
 }
 
 .scoreboard .result {
   color: red;
-  width: 50%;
-  font-size: 30px;
-  font-family: cursive;
+  outline: 2px solid red;
+  outline-offset: 1rem;
 }
 
 .scoreboard .bank,
@@ -34,37 +36,46 @@
 .hand {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 2vw;
-  margin: 0 8vw;
   padding-top: 15px;
-  background-color: darkgreen;
+  min-height: 15vw;
 }
 
 .card img {
-  width: 23vw;
+  width: 15vw;
   cursor: pointer;
-  transition: margin-top ease-in-out 300ms;
+  /*transition: margin-top ease-in-out 300ms;*/
 }
 
-.card img:hover {
-  margin-top: -10px;
+.card.selected {
+  opacity: 0.5;
 }
+
+/*.card.selected::after {*/
+/*  content: 'X';*/
+/*  color: dimgrey;*/
+/*  font-size: 15vw;*/
+/*  display: flow-root;*/
+/*  margin-top: -12vw;*/
+/*}*/
 
 .action-row {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: center;
+  gap: 2vw;
   margin-top: 20px;
+  font-size: 1.5rem;
 }
 
 .action-row .bets {
   display: flex;
-  gap: 2px;
+  gap: 0.5rem;
   align-items: center;
 }
 
 .action-row .bets span {
   font-weight: 600;
-  margin-right: 5px;
+  color: white;
 }
