@@ -12,16 +12,16 @@ import {
 } from './utils';
 
 function App() {
-  const [discards, setDiscards] = useState([]);
-  const [deck, setDeck] = useState(shuffledDeck());
-  const [hand, setHand] = useState([]);
   const [status, setStatus] = useState('finished');
+  const [discards, setDiscards] = useState<string[]>([]);
+  const [deck, setDeck] = useState<string[]>(shuffledDeck());
+  const [hand, setHand] = useState<string[]>([]);
   const [result, setResult] = useState<BestHand | null>(null);
-  const [bet, setBet] = useState(0);
-  const [won, setWon] = useState(0);
-  const [bank, setBank] = useState(100);
+  const [bet, setBet] = useState<number>(0);
+  const [won, setWon] = useState<number>(0);
+  const [bank, setBank] = useState<number>(100);
 
-  const handleSelect = (value) => {
+  const handleSelect = (value: string) => {
     setDiscards(addOrRemove(discards, value));
   };
 

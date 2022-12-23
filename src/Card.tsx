@@ -1,6 +1,12 @@
 import React from 'react';
 
-const Card = ({ value, isSelected, handleSelect }) => {
+type CardProps = {
+  value: string;
+  isSelected: boolean;
+  handleSelect: (value: string) => void;
+};
+
+const Card = ({ value, isSelected, handleSelect }: CardProps) => {
   return (
     <div
       className={`card${isSelected ? ' selected' : ''}`}

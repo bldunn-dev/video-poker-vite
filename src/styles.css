@@ -79,3 +79,9 @@
   font-weight: 600;
   color: white;
 }
+
+.action-row .bets button {
+  font-size: 2vw;
+  width: 10vw;
+  height: 5vw;
+}

@@ -40,7 +40,7 @@ export const deal = (deck: string[], number: number): string[] => {
 /*
   Will add or remove given card from given array of cards, returning new array
  */
-export const addOrRemove = (cards: string[], value: string) => {
+export const addOrRemove = (cards: string[], value: string): string[] => {
   const clone = cards.slice();
   const foundIndex = clone.findIndex((val) => val === value);
   if (foundIndex === -1) {
