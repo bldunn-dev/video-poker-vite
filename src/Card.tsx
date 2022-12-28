@@ -12,7 +12,11 @@ const Card = ({ value, isSelected, handleSelect }: CardProps) => {
       className={`card${isSelected ? ' selected' : ''}`}
       onClick={() => handleSelect(value)}
     >
-      <img src={`/images/${value}.svg`} alt={value} />
+      {/*Adding the explicit URL to make this images display on GitHub Pages (can figure out the reason later)*/}
+      <img
+        src={`https://bldunn-dev.github.io/video-poker-vite/images/${value}.svg`}
+        alt={value}
+      />
     </div>
   );
 };
