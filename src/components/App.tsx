@@ -1,6 +1,7 @@
-import './styles.css';
+import '../styles.css';
 import { useState } from 'react';
-import Card from './Card';
+import Scoreboard from './Scoreboard';
+import Hand from './Hand';
 import {
   addOrRemove,
   shuffledDeck,
@@ -9,7 +10,8 @@ import {
   evaluate,
   calculate,
   BestHand
-} from './utils';
+} from '../utils';
+import ActionRow from './ActionRow';
 
 function App() {
   const [status, setStatus] = useState('finished');
@@ -49,40 +51,14 @@ function App() {
 
   return (
     <div className="App">
-      <div className="scoreboard">
-        <div className="result">{result}</div>
-        <div className="bank">Bank: ${bank}</div>
-        <div className="bet">Bet: ${bet}</div>
-        <div className="won">Won: ${won}</div>
-      </div>
+      <Scoreboard result={result} bank={bank} bet={bet} won={won} />
       <div className="card-table">
-        <div className="hand">
-          {hand.map((value) => (
-            <Card
-              key={value}
-              value={value}
-              handleSelect={() => handleSelect(value)}
-              isSelected={discards.includes(value)}
-            />
-          ))}
-        </div>
-        <div className="action-row">
-          <button onClick={handleDraw} disabled={status === 'finished'}>
-            Draw
-          </button>
-          <div className="bets">
-            <span>BET: </span>
-            {[5, 10, 15, 20, 25].map((val) => (
-              <button
-                key={val}
-                onClick={() => handleBet(val)}
-                disabled={status === 'initial'}
-              >
-                ${val}
-              </button>
-            ))}
-          </div>
-        </div>
+        <Hand hand={hand} discards={discards} handleSelect={handleSelect} />
+        <ActionRow
+          handleDraw={handleDraw}
+          status={status}
+          handleBet={handleBet}
+        />
         <div className="instructions">
           <ul>
             <li>To start a hand, click the amount you wish to bet.</li>
