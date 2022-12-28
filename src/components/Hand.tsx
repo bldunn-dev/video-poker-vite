@@ -7,7 +7,7 @@ function Hand({
 }: {
   hand: string[];
   discards: string[];
-  handleSelect: (value: string) => null;
+  handleSelect: (value: string) => void;
 }) {
   return (
     <div className="hand">

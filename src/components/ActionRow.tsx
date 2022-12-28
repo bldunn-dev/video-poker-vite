@@ -3,9 +3,9 @@ function ActionRow({
   status,
   handleBet
 }: {
-  handleDraw: () => null;
+  handleDraw: () => void;
   status: string;
-  handleBet: (val: number) => null;
+  handleBet: (val: number) => void;
 }) {
   return (
     <div className="action-row">
