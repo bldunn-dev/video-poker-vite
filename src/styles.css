@@ -85,3 +85,13 @@
   width: 10vw;
   height: 5vw;
 }
+
+.instructions {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  color: wheat;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin-top: 20px;
+}

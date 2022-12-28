@@ -83,6 +83,16 @@ function App() {
             ))}
           </div>
         </div>
+        <div className="instructions">
+          <ul>
+            <li>To start a hand, click the amount you wish to bet.</li>
+            <li>
+              Click on the cards you wish to discard. They will turn grey.
+            </li>
+            <li>Click "Draw" to see your new cards and the result.</li>
+            <li>Win big!</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
